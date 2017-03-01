@@ -1,23 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="15G1212" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="AuthorsDB" representedClassName="AuthorsDB" syncable="YES" codeGenerationType="class">
+    <entity name="Annotation" representedClassName="Annotation" syncable="YES" codeGenerationType="class">
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Authors" representedClassName="Authors" syncable="YES" codeGenerationType="class">
         <attribute name="author" attributeType="String" syncable="YES"/>
         <relationship name="books" toMany="YES" deletionRule="Nullify" destinationEntity="BookDB" inverseName="authors" inverseEntity="BookDB" syncable="YES"/>
     </entity>
     <entity name="BookDB" representedClassName="BookDB" syncable="YES" codeGenerationType="class">
-        <attribute name="image" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
-        <attribute name="pdf" attributeType="Binary" syncable="YES"/>
         <attribute name="title" attributeType="String" syncable="YES"/>
-        <relationship name="authors" toMany="YES" deletionRule="Nullify" destinationEntity="AuthorsDB" inverseName="books" inverseEntity="AuthorsDB" syncable="YES"/>
-        <relationship name="tags" toMany="YES" deletionRule="Nullify" destinationEntity="TagsDB" inverseName="books" inverseEntity="TagsDB" syncable="YES"/>
+        <relationship name="annotation" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Annotation" syncable="YES"/>
+        <relationship name="authors" toMany="YES" deletionRule="Nullify" destinationEntity="Authors" inverseName="books" inverseEntity="Authors" syncable="YES"/>
+        <relationship name="localization" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Localization" syncable="YES"/>
+        <relationship name="pdf" maxCount="1" deletionRule="Cascade" destinationEntity="Pdf" syncable="YES"/>
+        <relationship name="photo" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Photo" syncable="YES"/>
+        <relationship name="tags" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="books" inverseEntity="Tag" syncable="YES"/>
     </entity>
-    <entity name="TagsDB" representedClassName="TagsDB" syncable="YES" codeGenerationType="class">
+    <entity name="Localization" representedClassName="Localization" syncable="YES" codeGenerationType="class">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="Pdf" representedClassName="Pdf" syncable="YES" codeGenerationType="class">
+        <attribute name="pdfData" optional="YES" attributeType="Binary" syncable="YES"/>
+    </entity>
+    <entity name="Photo" representedClassName="Photo" syncable="YES" codeGenerationType="class">
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+    </entity>
+    <entity name="Tag" representedClassName="Tag" syncable="YES" codeGenerationType="class">
         <attribute name="tag" attributeType="String" syncable="YES"/>
         <relationship name="books" toMany="YES" deletionRule="Nullify" destinationEntity="BookDB" inverseName="tags" inverseEntity="BookDB" syncable="YES"/>
     </entity>
     <elements>
-        <element name="BookDB" positionX="-81" positionY="-228" width="128" height="118"/>
-        <element name="TagsDB" positionX="-344" positionY="-183" width="128" height="73"/>
-        <element name="AuthorsDB" positionX="160" positionY="-183" width="128" height="73"/>
+        <element name="Authors" positionX="187" positionY="-261" width="128" height="73"/>
+        <element name="BookDB" positionX="-83" positionY="-364" width="128" height="148"/>
+        <element name="Tag" positionX="-344" positionY="-183" width="128" height="73"/>
+        <element name="Pdf" positionX="-299" positionY="-369" width="128" height="60"/>
+        <element name="Localization" positionX="36" positionY="-183" width="128" height="75"/>
+        <element name="Annotation" positionX="178" positionY="-330" width="128" height="60"/>
+        <element name="Photo" positionX="-351" positionY="-270" width="128" height="60"/>
     </elements>
 </model>
