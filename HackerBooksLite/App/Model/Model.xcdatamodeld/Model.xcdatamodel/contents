@@ -14,10 +14,10 @@
     <entity name="BookDB" representedClassName="BookDB" syncable="YES" codeGenerationType="class">
         <attribute name="title" attributeType="String" syncable="YES"/>
         <relationship name="annotation" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Annotation" syncable="YES"/>
-        <relationship name="authors" toMany="YES" deletionRule="Nullify" destinationEntity="Authors" inverseName="books" inverseEntity="Authors" syncable="YES"/>
+        <relationship name="authors" toMany="YES" deletionRule="Cascade" destinationEntity="Authors" inverseName="books" inverseEntity="Authors" syncable="YES"/>
         <relationship name="pdf" maxCount="1" deletionRule="Cascade" destinationEntity="Pdf" syncable="YES"/>
         <relationship name="photo" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Photo" syncable="YES"/>
-        <relationship name="tags" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="books" inverseEntity="Tag" syncable="YES"/>
+        <relationship name="tags" toMany="YES" deletionRule="Cascade" destinationEntity="Tag" inverseName="books" inverseEntity="Tag" syncable="YES"/>
     </entity>
     <entity name="Localization" representedClassName="Localization" syncable="YES" codeGenerationType="class">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
@@ -36,7 +36,7 @@
     </entity>
     <elements>
         <element name="Authors" positionX="117" positionY="-306" width="128" height="73"/>
-        <element name="BookDB" positionX="-83" positionY="-364" width="128" height="133"/>
+        <element name="BookDB" positionX="-81" positionY="-432" width="128" height="133"/>
         <element name="Tag" positionX="-344" positionY="-183" width="128" height="73"/>
         <element name="Pdf" positionX="-299" positionY="-369" width="128" height="60"/>
         <element name="Localization" positionX="295" positionY="-412" width="128" height="88"/>
