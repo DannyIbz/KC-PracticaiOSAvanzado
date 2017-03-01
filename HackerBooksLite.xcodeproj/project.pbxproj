@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		0875EA3A1E65A79900A96975 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0875EA391E65A79900A96975 /* CoreData.framework */; };
 		0875EA3D1E65A7AC00A96975 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0875EA3B1E65A7AC00A96975 /* Model.xcdatamodeld */; };
+		08A199E41E67458A0024CD08 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A199E21E67458A0024CD08 /* CoreDataManager.swift */; };
+		08A199E61E67465A0024CD08 /* BookDB+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A199E51E67465A0024CD08 /* BookDB+Utils.swift */; };
+		08A199E81E6749650024CD08 /* Annotation+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A199E71E6749650024CD08 /* Annotation+Utils.swift */; };
+		08A199EA1E6749850024CD08 /* Authors+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A199E91E6749850024CD08 /* Authors+Utils.swift */; };
+		08A199EC1E6749AF0024CD08 /* Localization+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A199EB1E6749AF0024CD08 /* Localization+Utils.swift */; };
+		08A199EE1E6749CE0024CD08 /* Pdf+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A199ED1E6749CE0024CD08 /* Pdf+Utils.swift */; };
+		08A199F01E6749E30024CD08 /* Photo+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A199EF1E6749E30024CD08 /* Photo+Utils.swift */; };
+		08A199F41E674A0D0024CD08 /* Tag+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A199F31E674A0D0024CD08 /* Tag+Utils.swift */; };
 		ED07720F1D595AE60074331F /* AsyncData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07720E1D595AE60074331F /* AsyncData.swift */; };
 		ED0788C21D60D8F200C4773C /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0788C11D60D8F200C4773C /* Tags.swift */; };
 		ED0788C31D60D8F200C4773C /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0788C11D60D8F200C4773C /* Tags.swift */; };
@@ -69,6 +77,14 @@
 /* Begin PBXFileReference section */
 		0875EA391E65A79900A96975 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0875EA3C1E65A7AC00A96975 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		08A199E21E67458A0024CD08 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ../../../../Everpobre/Everpobre/Everpobre/Managers/CoreDataManager.swift; sourceTree = "<group>"; };
+		08A199E51E67465A0024CD08 /* BookDB+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BookDB+Utils.swift"; sourceTree = "<group>"; };
+		08A199E71E6749650024CD08 /* Annotation+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Annotation+Utils.swift"; sourceTree = "<group>"; };
+		08A199E91E6749850024CD08 /* Authors+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Authors+Utils.swift"; sourceTree = "<group>"; };
+		08A199EB1E6749AF0024CD08 /* Localization+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Localization+Utils.swift"; sourceTree = "<group>"; };
+		08A199ED1E6749CE0024CD08 /* Pdf+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Pdf+Utils.swift"; sourceTree = "<group>"; };
+		08A199EF1E6749E30024CD08 /* Photo+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photo+Utils.swift"; sourceTree = "<group>"; };
+		08A199F31E674A0D0024CD08 /* Tag+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tag+Utils.swift"; sourceTree = "<group>"; };
 		ED07720E1D595AE60074331F /* AsyncData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncData.swift; sourceTree = "<group>"; };
 		ED0788C11D60D8F200C4773C /* Tags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = "<group>"; };
 		ED0788C41D60E07D00C4773C /* TagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTests.swift; sourceTree = "<group>"; };
@@ -140,14 +156,39 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		08A199E31E67458A0024CD08 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				08A199E21E67458A0024CD08 /* CoreDataManager.swift */,
+			);
+			name = Managers;
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		08A199F51E674A2A0024CD08 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				08A199E71E6749650024CD08 /* Annotation+Utils.swift */,
+				08A199E91E6749850024CD08 /* Authors+Utils.swift */,
+				08A199E51E67465A0024CD08 /* BookDB+Utils.swift */,
+				08A199EB1E6749AF0024CD08 /* Localization+Utils.swift */,
+				08A199ED1E6749CE0024CD08 /* Pdf+Utils.swift */,
+				08A199EF1E6749E30024CD08 /* Photo+Utils.swift */,
+				08A199F31E674A0D0024CD08 /* Tag+Utils.swift */,
+			);
+			name = Utils;
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		ED4908A21D5D02BA00212410 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				08A199F51E674A2A0024CD08 /* Utils */,
 				ED4908A31D5D02DA00212410 /* Books.swift */,
 				EDB3AE681D67A5F70023A807 /* JSONProcessing.swift */,
 				ED0788CB1D6165A000C4773C /* Library.swift */,
-				ED0788C11D60D8F200C4773C /* Tags.swift */,
 				0875EA3B1E65A7AC00A96975 /* Model.xcdatamodeld */,
+				ED0788C11D60D8F200C4773C /* Tags.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -155,11 +196,11 @@
 		ED8E53F41D359AB100DD8F94 = {
 			isa = PBXGroup;
 			children = (
+				0875EA381E65A79800A96975 /* Frameworks */,
 				ED8E53FF1D359AB100DD8F94 /* HackerBooksLite */,
 				ED8E54161D359AB100DD8F94 /* HackerBooksLiteTests */,
 				ED8E54211D359AB100DD8F94 /* HackerBooksLiteUITests */,
 				ED8E53FE1D359AB100DD8F94 /* Products */,
-				0875EA381E65A79800A96975 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -277,6 +318,7 @@
 			children = (
 				EDA79C591D66A226001A27F7 /* Controllers */,
 				EDC9E17F1D4AA2AD00E4D047 /* DataStructures */,
+				08A199E31E67458A0024CD08 /* Managers */,
 				ED4908A21D5D02BA00212410 /* Model */,
 				EDEFFBD71D35AAF300A5E75C /* NetworkUtils */,
 				EDEFFBD61D35AAB300A5E75C /* Resources */,
@@ -452,18 +494,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08A199E61E67465A0024CD08 /* BookDB+Utils.swift in Sources */,
 				ED4908A41D5D02DA00212410 /* Books.swift in Sources */,
 				EDB3AE691D67A5F70023A807 /* JSONProcessing.swift in Sources */,
+				08A199EA1E6749850024CD08 /* Authors+Utils.swift in Sources */,
+				08A199F41E674A0D0024CD08 /* Tag+Utils.swift in Sources */,
 				EDB3AE881D6BC7890023A807 /* BookTableViewCell.swift in Sources */,
 				ED3B1E0B1D6E5A690000A7C6 /* PDFViewController.swift in Sources */,
 				EDC9E17D1D4AA2A800E4D047 /* MultiDictionary.swift in Sources */,
 				ED0788C21D60D8F200C4773C /* Tags.swift in Sources */,
 				ED07720F1D595AE60074331F /* AsyncData.swift in Sources */,
+				08A199E81E6749650024CD08 /* Annotation+Utils.swift in Sources */,
+				08A199EC1E6749AF0024CD08 /* Localization+Utils.swift in Sources */,
 				EDA79C4A1D63AF98001A27F7 /* Library.swift in Sources */,
+				08A199EE1E6749CE0024CD08 /* Pdf+Utils.swift in Sources */,
 				EDA79C581D66A219001A27F7 /* LibraryViewController.swift in Sources */,
 				EDB3AE841D6ACAE80023A807 /* BookViewController.swift in Sources */,
 				EDA79C571D66A219001A27F7 /* Controllers.swift in Sources */,
 				0875EA3D1E65A7AC00A96975 /* Model.xcdatamodeld in Sources */,
+				08A199E41E67458A0024CD08 /* CoreDataManager.swift in Sources */,
+				08A199F01E6749E30024CD08 /* Photo+Utils.swift in Sources */,
 				ED8E54011D359AB100DD8F94 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
