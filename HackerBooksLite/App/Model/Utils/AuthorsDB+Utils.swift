@@ -8,6 +8,6 @@
 
 import Foundation
 
-extension Authors {
+extension AuthorsDB {
     
 }
