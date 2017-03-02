@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
     
     var window: UIWindow?
-    // var context: NSManagedObjectContext?
+    var context: NSManagedObjectContext?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -21,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         }
         
         self.context = container.viewContext
-        injectContextToFirstViewController()
+        // injectContextToFirstViewController()
         
         return true
     }
@@ -31,12 +32,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         saveContext(context: context)
     }
     
-    func injectContextToFirstViewController(){
-        if let navController = window?.rootViewController as? UINavigationController,
-            let initialViewController = navController.topViewController as? NotebooksController {
-            
-            initialViewController.context = self.context
-        }
-    }
+    // func injectContextToFirstViewController(){
+    //    if let navController = window?.rootViewController as? UINavigationController,
+    //        let initialViewController = navController.topViewController as? BookViewController {
+    //
+    //        initialViewController.context = self.context
+    //    }
+    // }
 }
 

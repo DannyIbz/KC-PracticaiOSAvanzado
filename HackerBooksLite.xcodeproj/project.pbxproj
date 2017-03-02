@@ -220,7 +220,6 @@
 				ED8E54001D359AB100DD8F94 /* AppDelegate.swift */,
 				ED8E54091D359AB100DD8F94 /* Assets.xcassets */,
 				ED8E540E1D359AB100DD8F94 /* Info.plist */,
-				ED8E540B1D359AB100DD8F94 /* LaunchScreen.storyboard */,
 			);
 			path = HackerBooksLite;
 			sourceTree = "<group>";
@@ -272,6 +271,7 @@
 			children = (
 				EDB3AE861D6BC7890023A807 /* BookTableViewCell.swift */,
 				EDB3AE871D6BC7890023A807 /* BookTableViewCell.xib */,
+				ED8E540B1D359AB100DD8F94 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -406,7 +406,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = KeepCoding;
 				TargetAttributes = {
 					ED8E53FC1D359AB100DD8F94 = {
@@ -565,7 +565,7 @@
 				ED8E540C1D359AB100DD8F94 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			path = .;
+			path = ../../.;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -586,8 +586,10 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -634,8 +636,10 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
