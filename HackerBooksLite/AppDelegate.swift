@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         self.context = container.viewContext
         // injectContextToFirstViewController()
         
+        testZone()
+        
         return true
     }
     
@@ -39,5 +41,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     //        initialViewController.context = self.context
     //    }
     // }
+    
+    
+    // MARK: - Test Zone
+    func testZone() {
+        let myBook: BookDB = BookDB(context: self.context!)
+        myBook.title = "Mi libro de prueba"
+    }
 }
 
