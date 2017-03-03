@@ -47,6 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func testZone() {
         let myBook: BookDB = BookDB(context: self.context!)
         myBook.title = "Mi libro de prueba"
+        
+        saveContext(context: context!)
     }
 }
 
