@@ -14,41 +14,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
     var window: UIWindow?
     var context: NSManagedObjectContext?
-    
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        // Clean up all local caches
+        AsyncData.removeAllLocalFiles()
+        
+        // Create the window
+        window = UIWindow.init(frame: UIScreen.main.bounds)
+        
+        // Create the model
         let container = persistentContainer(dbName: "Model") { (error: NSError?) in
             fatalError("Unresolved error \(error), \(error?.userInfo)")
         }
         
         self.context = container.viewContext
-        // injectContextToFirstViewController()
+        //injectContextToFirstViewController()
+
         
-        testZone()
+        func applicationDidEnterBackground(_ application: UIApplication) {
+            guard let context = self.context else { return }
+            saveContext(context: context)
+        }
+        
+        //func injectContextToFirstViewController(){
+        //    if let navController = window?.rootViewController as? UINavigationController,
+        //        let initialViewController = navController.topViewController as? NotebooksController {
+        //
+        //        initialViewController.context = self.context
+        //    }
+        //}
+        
+        
+        // Create the rootVC
+        let rootVC = LibraryViewController(model: model!, style: .plain)
+        window?.rootViewController = rootVC.wrappedInNavigationController()
+        
+        // Display
+        window?.makeKeyAndVisible()
         
         return true
-    }
-    
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        guard let context = self.context else { return }
-        saveContext(context: context)
-    }
-    
-    // func injectContextToFirstViewController(){
-    //    if let navController = window?.rootViewController as? UINavigationController,
-    //        let initialViewController = navController.topViewController as? BookViewController {
-    //
-    //        initialViewController.context = self.context
-    //    }
-    // }
-    
-    
-    // MARK: - Test Zone
-    func testZone() {
-        let myBook: BookDB = BookDB(context: self.context!)
-        myBook.title = "Mi libro de prueba"
-        
-        saveContext(context: context!)
     }
 }
 
