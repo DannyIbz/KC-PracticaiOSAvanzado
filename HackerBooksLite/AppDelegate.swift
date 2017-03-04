@@ -38,18 +38,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             saveContext(context: context)
         }
         
-        //func injectContextToFirstViewController(){
-        //    if let navController = window?.rootViewController as? UINavigationController,
-        //        let initialViewController = navController.topViewController as? NotebooksController {
-        //
-        //        initialViewController.context = self.context
-        //    }
-        //}
-        
-        
         // Create the rootVC
-        let rootVC = LibraryViewController(model: model!, style: .plain)
-        window?.rootViewController = rootVC.wrappedInNavigationController()
+        func injectContextToFirstViewController(){
+            if let navController = window?.rootViewController as? UINavigationController,
+                let initialViewController = navController.topViewController as? LibraryViewController {
+        
+                initialViewController.context = self.context
+            }
+        }
+        
         
         // Display
         window?.makeKeyAndVisible()
