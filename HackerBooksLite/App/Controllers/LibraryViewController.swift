@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class LibraryViewController: UITableViewController {
 
@@ -15,6 +16,8 @@ class LibraryViewController: UITableViewController {
     
     
     var delegate : LibraryViewControllerDelegate?
+    var context: NSManagedObjectContext?
+    var _fetchedResultsController: NSFetchedResultsController<BookDB>? = nil
     
     
     //MARK: - Init & Lifecycle
