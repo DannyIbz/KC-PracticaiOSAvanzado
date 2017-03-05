@@ -13,7 +13,7 @@ extension BookDB {
     //MARK: - Decodification
     func decode(book dict: JSONDictionary) throws -> BookDB{
         
-        var context: NSManagedObjectContext
+        var context: NSManagedObjectContext?
         
         // validate first
         try validate(dictionary: dict)
@@ -40,11 +40,20 @@ extension BookDB {
         let pdf = AsyncData(url: pdfURL, defaultData: try! Data(contentsOf: defaultPdf))
         
         // Insert JSON data on BookDB entity
+        for author in authors {
+            let authorDB = AuthorsDB(context: context!)
+            authorDB.fullName = author
+            
+            authorDB.addToBooks(b)
+            b.authors?.adding(authorDB)
+        }
         
         
-        guard let context = self.context else { return }
-        saveContext(context: context)
+        self.title = title
         
+        self.authors = AuthorsDB
+        
+        return self
     }
     
     func decode(book dict: JSONDictionary?) throws -> Book{
